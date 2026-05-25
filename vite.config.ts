@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { tamaguiPlugin } from '@tamagui/vite-plugin'
 
 export default defineConfig({
+  base: '/Dieta-app/',
   plugins: [
     react(),
     tamaguiPlugin({
