@@ -35,7 +35,7 @@ export default function App() {
   }
 
   return (
-    <YStack flex={1} height="100vh" backgroundColor="$background">
+    <YStack flex={1} height="100vh" backgroundColor="$background" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
       <YStack flex={1} overflow="scroll" padding="$4" paddingBottom="$2" ref={scrollRef}>
         {activeTab === 'hoy' && plan && <DayView plan={plan} />}
         {activeTab === 'semana' && plan && <WeekView plan={plan} swapMeals={swapMeals} />}
