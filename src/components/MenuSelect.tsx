@@ -28,7 +28,7 @@ export function MenuSelect({ onSelect, currentMenuId }: Props) {
         <Text fontSize="$6" fontWeight="700" textAlign="center">{previewMenu.dieta_id}</Text>
         <Text fontSize="$4" color="$color8" textAlign="center">{previewMenu.Fecha}</Text>
 
-        <Card padding="$4" borderWidth={1} borderColor="$borderColor" borderRadius="$5">
+        <Card padding="$4" backgroundColor="$orange5" borderRadius="$5">
           <Text fontSize="$5" fontWeight="700" marginBottom="$2">🍽️ Comidas</Text>
           <Separator marginBottom="$2" />
           <YStack gap="$2">
@@ -38,7 +38,7 @@ export function MenuSelect({ onSelect, currentMenuId }: Props) {
           </YStack>
         </Card>
 
-        <Card padding="$4" borderWidth={1} borderColor="$borderColor" borderRadius="$5">
+        <Card padding="$4" backgroundColor="$purple4" borderRadius="$5">
           <Text fontSize="$5" fontWeight="700" marginBottom="$2">🌙 Cenas</Text>
           <Separator marginBottom="$2" />
           <YStack gap="$2">
@@ -119,9 +119,9 @@ export function MenuSelect({ onSelect, currentMenuId }: Props) {
               key={menu.dieta_id}
               padding="$4"
               borderRadius="$5"
-              backgroundColor={isActive ? '$green2' : '$color2'}
+              backgroundColor={isActive ? '$green3' : '$purple3'}
               borderWidth={isActive ? 2 : 1}
-              borderColor={isActive ? '$green7' : '$borderColor'}
+              borderColor={isActive ? '$green7' : '$purple6'}
               pressStyle={{ scale: 0.98 }}
               onPress={() => setPreviewMenu(menu)}
             >

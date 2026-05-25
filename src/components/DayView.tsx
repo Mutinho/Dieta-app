@@ -55,7 +55,7 @@ function DayCard({ day, label, plan, highlight }: { day: DayOfWeek; label: strin
       <Separator marginBottom="$4" />
 
       <YStack gap="$4">
-        <YStack gap="$1" padding="$3" backgroundColor={highlight ? '$blue3' : '$background'} borderRadius="$4">
+        <YStack gap="$1" padding="$3" backgroundColor={highlight ? '$orange5' : '$orange5'} borderRadius="$4">
           <XStack gap="$2" alignItems="center">
             <Text fontSize="$6">🍽️</Text>
             <Text fontSize="$3" color="$color8" fontWeight="600">COMIDA</Text>
@@ -63,7 +63,7 @@ function DayCard({ day, label, plan, highlight }: { day: DayOfWeek; label: strin
           <Text fontSize="$5" fontWeight="500" paddingLeft="$8">{dayPlan.comida}</Text>
         </YStack>
 
-        <YStack gap="$1" padding="$3" backgroundColor={highlight ? '$orange2' : '$background'} borderRadius="$4">
+        <YStack gap="$1" padding="$3" backgroundColor={highlight ? '$purple4' : '$purple4'} borderRadius="$4">
           <XStack gap="$2" alignItems="center">
             <Text fontSize="$6">🌙</Text>
             <Text fontSize="$3" color="$color8" fontWeight="600">CENA</Text>

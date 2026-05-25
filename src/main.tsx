@@ -6,9 +6,8 @@ import App from './App'
 import './global.css'
 
 function Root() {
-  const scheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
   return (
-    <TamaguiProvider config={config} defaultTheme={scheme}>
+    <TamaguiProvider config={config} defaultTheme="dark">
       <App />
     </TamaguiProvider>
   )

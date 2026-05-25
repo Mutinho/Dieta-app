@@ -70,7 +70,7 @@ export function WeekView({ plan, swapMeals }: Props) {
         <Text fontSize="$4" fontWeight="600" marginTop="$2">Selecciona el nuevo plato:</Text>
 
         <YStack gap="$2">
-          <Text fontSize="$4" fontWeight="700" color="$blue10" marginTop="$2">🍽️ Comidas</Text>
+          <Text fontSize="$4" fontWeight="700" color="$orange10" marginTop="$2">🍽️ Comidas</Text>
           {allMeals.filter(m => m.slot === 'comida').map(m => (
             <Card
               key={`${m.day}-${m.slot}`}
@@ -78,7 +78,7 @@ export function WeekView({ plan, swapMeals }: Props) {
               borderWidth={1}
               borderColor="$borderColor"
               borderRadius="$4"
-              pressStyle={{ backgroundColor: '$blue3', scale: 0.98 }}
+              pressStyle={{ backgroundColor: '$orange3', scale: 0.98 }}
               onPress={() => handlePickMeal(m.day, m.slot)}
             >
               <XStack gap="$3" alignItems="center">
@@ -91,7 +91,7 @@ export function WeekView({ plan, swapMeals }: Props) {
             </Card>
           ))}
 
-          <Text fontSize="$4" fontWeight="700" color="$orange10" marginTop="$3">🌙 Cenas</Text>
+          <Text fontSize="$4" fontWeight="700" color="$purple10" marginTop="$3">🌙 Cenas</Text>
           {allMeals.filter(m => m.slot === 'cena').map(m => (
             <Card
               key={`${m.day}-${m.slot}`}
@@ -99,7 +99,7 @@ export function WeekView({ plan, swapMeals }: Props) {
               borderWidth={1}
               borderColor="$borderColor"
               borderRadius="$4"
-              pressStyle={{ backgroundColor: '$orange3', scale: 0.98 }}
+              pressStyle={{ backgroundColor: '$purple3', scale: 0.98 }}
               onPress={() => handlePickMeal(m.day, m.slot)}
             >
               <XStack gap="$3" alignItems="center">
@@ -146,32 +146,30 @@ export function WeekView({ plan, swapMeals }: Props) {
               )}
             </XStack>
             <Separator marginBottom="$2" />
-            <YStack gap="$2">
-              <XStack
-                gap="$3"
+            <XStack gap="$2">
+              <Card
+                flex={1}
                 padding="$3"
                 borderRadius="$3"
-                backgroundColor="$background"
-                pressStyle={{ backgroundColor: '$blue3', scale: 0.98 }}
+                backgroundColor="$orange5"
+                pressStyle={{ backgroundColor: '$orange6', scale: 0.98 }}
                 onPress={() => setSelected({ day, slot: 'comida' })}
-                alignItems="center"
               >
-                <Text fontSize="$5">🍽️</Text>
-                <Text fontSize="$4" flex={1} fontWeight="500">{dayPlan?.comida}</Text>
-              </XStack>
-              <XStack
-                gap="$3"
+                <Text fontSize="$3" marginBottom="$1">🍽️ Comida</Text>
+                <Text fontSize="$3" fontWeight="500">{dayPlan?.comida}</Text>
+              </Card>
+              <Card
+                flex={1}
                 padding="$3"
                 borderRadius="$3"
-                backgroundColor="$background"
-                pressStyle={{ backgroundColor: '$orange3', scale: 0.98 }}
+                backgroundColor="$purple3"
+                pressStyle={{ backgroundColor: '$purple4', scale: 0.98 }}
                 onPress={() => setSelected({ day, slot: 'cena' })}
-                alignItems="center"
               >
-                <Text fontSize="$5">🌙</Text>
-                <Text fontSize="$4" flex={1} fontWeight="500">{dayPlan?.cena}</Text>
-              </XStack>
-            </YStack>
+                <Text fontSize="$3" marginBottom="$1">🌙 Cena</Text>
+                <Text fontSize="$3" fontWeight="500">{dayPlan?.cena}</Text>
+              </Card>
+            </XStack>
           </Card>
         )
       })}
