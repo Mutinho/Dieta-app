@@ -23,6 +23,7 @@ export function TabBar({ active, onChange }: Props) {
       paddingBottom="$3"
       paddingTop="$2"
       elevation="$4"
+      style={{ paddingBottom: 'calc(12px + env(safe-area-inset-bottom, 0px))' }}
     >
       {TABS.map(t => {
         const isActive = active === t.id
