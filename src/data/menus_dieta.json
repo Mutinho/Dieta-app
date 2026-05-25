@@ -1,0 +1,368 @@
+{
+  "alimentos_libres": {
+    "general": "Lechugas, berros, canónigos, rúcula, tomates, cebollas, zanahorias, pepinos, cebolletas, pepinillos, espárragos, puerros, apio, palmitos, rábanos, setas, champiñones, alcaparras, ajetes, pimientos, endibias, bebidas light y Zero, sal, vinagres, limón, pimienta, especias, pimentón, guindillas, ajos, perejil, avecrem, caldo de tetrabrick para cocinar, salsa soja, mostaza, alcohol para cocinar, ketchup LIGHT, edulcorantes, café, té, infusiones, caramelos y chicles sin azúcar.",
+    "frutas": "Kiwis, piña, melón, sandía, naranja (no zumo), mandarina, fresa, níspero. CON PIEL: pera, ciruela fresca, albaricoque, nectarina, cerezas, paraguaya, melocotón, papaya, frutos rojos, granada."
+  },
+  "menus": [
+    {
+      "dieta_id": "Dieta 12",
+      "Fecha": "Mayo",
+      "comidas": [
+        "Arroz o pasta (maiz, atun/surimi)",
+        "Ensalada campera",
+        "Gazpacho + salmon",
+        "Gazpacho + pechuga de pollo",
+        "Ensalada de legumbre con verduras",
+        "Verdura + filete o hamburguesa de ternera"
+      ],
+      "cenas": [
+        "1 tazón de leche + cereales menos 3% grasa",
+        "2 huevos + salchichas de ave",
+        "Bocadillo de atún/gulas",
+        "Bocadillo de + fiambre + queso menos 15% grasa",
+        "Bocadillo de Jamón serrano",
+        "Ensalada Marisco"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 13",
+      "Fecha": "Agosto",
+      "comidas": [
+        "Guisantes con jamón -> gallos, lenguado, merluza",
+        "Ensalada de legumbres",
+        "Verdura + 1 patata con lenguado, gallo o merluza",
+        "Gazpacho con pollo",
+        "Gazpacho con pollo",
+        "Melon o setas con jamon, terneda o cerdo"
+      ],
+      "cenas": [
+        "Salmorejo con huevo y jamon",
+        "Tazón de leche con cereales",
+        "Tortilla de calabacin",
+        "Bocadillo de atun",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de queso de untar"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 14",
+      "Fecha": "Octubre",
+      "comidas": [
+        "Arroz o pasta + fiambre",
+        "Espárragos + pescado",
+        "Espárragos + pescado",
+        "Ensalada de garbanzos",
+        "Gazpacho y filete de ternera/añojo",
+        "Crema de calabacín/calabaza + pollo"
+      ],
+      "cenas": [
+        "Leche con cereales",
+        "Bocadillo de jamon serrano",
+        "Bocadillo de gulas",
+        "Bocadillo de lacon o lomo",
+        "Tortilla francesa con atun",
+        "Judías verdes con jamon"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 1",
+      "Fecha": "Mayo",
+      "comidas": [
+        "Lentejas con verduras sin carne",
+        "Pasta con atún",
+        "Arroz champiñones y jamón york",
+        "Puré de verduras y pollo",
+        "Judías verdes + dorada/lubina",
+        "Sopa de fideos de sobre + solomillo de cerdo"
+      ],
+      "cenas": [
+        "Esparragos y salmon",
+        "Tortilla francesa con gulas",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de atún",
+        "Bocadillo de queso de untar",
+        "Bocadillo de ternera"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 2",
+      "Fecha": "Agosto",
+      "comidas": [
+        "Espárragos con ternera",
+        "Gazpacho + pescado",
+        "Gazpacho + salchichas de ave",
+        "Arroz con tomate y fiambre",
+        "Ensalada de garbanzos",
+        "Ensalada de pasta"
+      ],
+      "cenas": [
+        "Leche con cereales",
+        "Bocadillo de lacon con queso",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de atún",
+        "Tortilla francesa con salchichas",
+        "Esparrados + marisco"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 3",
+      "Fecha": "Junio",
+      "comidas": [
+        "Ensalada de judias blancas",
+        "Arroz con pollo y verduras",
+        "Gazpacho + pollo",
+        "Pasta con tomate y queso light",
+        "Ensalada y hamburguesa ternera",
+        "Esparragos con salmon"
+      ],
+      "cenas": [
+        "Gazpacho + pescado o marisco",
+        "Tortilla francesa y gulas",
+        "Bocadillo de salmón ahumado",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de queso de untar",
+        "Bocadillo de pollo a la plancha"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 4",
+      "Fecha": "Julio / Agosto",
+      "comidas": [
+        "Guisantes con jamón",
+        "Pasta con salchichas",
+        "Arroz negro",
+        "Esparragos + lubina",
+        "Patatas cocidas + lacón",
+        "Gazpacho + hamburguesa de pollo"
+      ],
+      "cenas": [
+        "Tortilla francesa de berenjena/calabacin",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de atún",
+        "Bocadillo de queso de untar / burgos membrillo",
+        "Alimentos libres + manzana + pollo"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 16",
+      "Fecha": "Marzo",
+      "comidas": [
+        "Calabaza o Calabacín + patata + pescado",
+        "Calabaza o Calabacín + patata + pescado",
+        "Mazorca de maiz + hamburguesa de pollo",
+        "Esparragos + terneta o cinta de lomo",
+        "Lentejas",
+        "Arróz con tomate y salchichas"
+      ],
+      "cenas": [
+        "Bocadilo de atún",
+        "Bocadilo de pavo con mayonesa o queso",
+        "Bocadilo de jamón serrano",
+        "Bocadilo de filete de pollo con queso",
+        "Tortilla francesa con setas/champiñones",
+        "Esparrados con sepia"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 17",
+      "Fecha": "Mayo",
+      "comidas": [
+        "Gazpacho + pollo",
+        "Puré de calabacin + gulas/lubina",
+        "Pasta con atún",
+        "Lentejas",
+        "Espinacas + cinta de lomo",
+        "Puré/Verdura o gazpacho + lubina"
+      ],
+      "cenas": [
+        "Bocadillo de ternera",
+        "Bocadillo de jamón york y queso",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de jamón atún",
+        "Tortilla francesa con esparragos",
+        "Guisantes + taquitos jamón serrano"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 18",
+      "Fecha": "Septiembre",
+      "comidas": [
+        "Verduras -> filete de ternera",
+        "Salmorejo + emperador / salmón",
+        "Patata cocida + hamburguesa de pollo",
+        "Ensalada de garbanzos",
+        "Pasta con atún/pavo/lacón",
+        "Champiñones o setas + jamón + pollo/pescado"
+      ],
+      "cenas": [
+        "Tortilla francesa con gulas",
+        "Bocadillo de salmon ahumado",
+        "Bocadillo de queso de untar",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de atún",
+        "Maíz + tomate + mozarrella"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 19",
+      "Fecha": "Noviembre",
+      "comidas": [
+        "Bonito con tomate y verduras",
+        "Calabacín o gazpacho -> filete de ternera",
+        "Menestra con jamón o salchichas de ave",
+        "Lentejas",
+        "Arroz con Verduras (Idem: Risotto de calabaza/setas)",
+        "Verdura / gazpacho / ensalada + pollo/pescado"
+      ],
+      "cenas": [
+        "AL + maíz o aguacate + salmón o palitos de cangrejo",
+        "Sopa de fideos + huevo y pescado o marisco",
+        "Bocadilo de tortilla francesa con atún",
+        "Bocadillo de + Burgos 0% + pavo",
+        "Bocadillo de lomo",
+        "Bocadillo de jamón serrano"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 5",
+      "Fecha": "Septiembre",
+      "comidas": [
+        "Arroz 3 delicias",
+        "Ensalada de garbanzos",
+        "Pasta con setas y verduras",
+        "Gazpacho/salomrejo con cinta de lomo",
+        "Acelgas con patatas y salchichas",
+        "Ensalada tomate y queso burgos + salmon"
+      ],
+      "cenas": [
+        "Verdura o puré + pescado",
+        "Salmorejo + huevo + jamon",
+        "Bocadillo de atún/Boquerones",
+        "Bocadillo de pollo con queso",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de lacón con queso"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 6",
+      "Fecha": "Octubre",
+      "comidas": [
+        "Pasta rellena (de carne)",
+        "Acelgas o espinacas -> filete de ternera",
+        "Crema de calabaza + hamburguesa de ave",
+        "Setas con jamón + lubina",
+        "Ensalada de judias blancas",
+        "Esparragos + pollo/pescado/mariscos"
+      ],
+      "cenas": [
+        "Bocadillo de atún",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de salchichas",
+        "Bocadillo de queso de untar",
+        "Tortilla francesa con salchichas",
+        "Esparragos + lubina"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 7",
+      "Fecha": "Octubre",
+      "comidas": [
+        "Arroz con pollo y verduras",
+        "Guisantes con jamon",
+        "Puré de verduras + pescado",
+        "Puré de verduras + salchichas de ave",
+        "Espárragos + ternera",
+        "Judías verdes + marisco"
+      ],
+      "cenas": [
+        "Bocadillo de salmón ahumado",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de queso de untar",
+        "Bocadillo de pollo",
+        "Tortilal francesa de atún",
+        "Ensalada de tomate + mozarella y pavo"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 8",
+      "Fecha": "Noviembre",
+      "comidas": [
+        "Calabacín y/o berenjena + gallo/lenguado/merluza",
+        "Patata cocida + cinta de lomo",
+        "Arroz con verduras",
+        "Pasta con carne picada",
+        "Garbanzos con verdura y pollo",
+        "Sopa  + pollo/ternera/pescado"
+      ],
+      "cenas": [
+        "Tortilla francesa con pavo",
+        "Bocadillo de jamon serrano",
+        "Bocadillo de lomo",
+        "Bocadillo de atún",
+        "Bocadillo de queso de untar",
+        "Ensalada de tomate + gulas"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 9",
+      "Fecha": "Febrero",
+      "comidas": [
+        "Lentejas",
+        "Arroz/pasta + 2 a 4 cucharadas tomate frito + salchichas de ave",
+        "Puré con dorada",
+        "Puré con lubina",
+        "Sopa + hamburguesa de ternera",
+        "Ensalada o verdura + pollo"
+      ],
+      "cenas": [
+        "Bocadillo de atún",
+        "Bocadillo de jamón york con queso",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de cinta de lomo/ternera",
+        "Tortilla francesa con calabacin",
+        "Pizza con menos de 6,5gr de grasa"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 10",
+      "Fecha": "Marzo",
+      "comidas": [
+        "Guisantes con jamon",
+        "Ensalada de tomate + ternera",
+        "Espárragos + langostinos",
+        "Espárragos + pollo",
+        "Sopa de sobre + pollo",
+        "Puré + lubina"
+      ],
+      "cenas": [
+        "Frutas con yogur",
+        "Tallarines con calabacin",
+        "Bocadillo de atún",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de queso de untar",
+        "Tortilal francesa con atun"
+      ]
+    },
+    {
+      "dieta_id": "Dieta 11",
+      "Fecha": "Abril",
+      "comidas": [
+        "Garbanzos con verduras y pollo",
+        "Cinta de lomo con patatas cocidas",
+        "Judías verdes con jamón",
+        "Calabacín + lubina",
+        "Pasta + gulas/atún",
+        "Puré de verduras -> pollo"
+      ],
+      "cenas": [
+        "Tortilla francesa de queso",
+        "Bocadillo de jamón serrano",
+        "Bocadillo de atún",
+        "Bocadillo de queso de untar",
+        "Ensalada de tomate y maiz + pollo",
+        "Fruta + yogures"
+      ]
+    }
+  ]
+}
