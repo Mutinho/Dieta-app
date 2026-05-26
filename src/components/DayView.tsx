@@ -41,7 +41,7 @@ export function DayView({ plan }: Props) {
     <YStack gap="$4">
       <DayCard day={today} label="Hoy" plan={plan} highlight />
       <Card
-        padding="$5"
+        padding="$3"
         borderRadius="$6"
         backgroundColor="$color2"
         borderWidth={1}
@@ -93,7 +93,7 @@ function DayCard({ day, label, plan, highlight }: { day: DayOfWeek; label: strin
 
   return (
     <Card
-      padding="$5"
+      padding="$3"
       borderRadius="$6"
       backgroundColor={highlight ? '$blue2' : '$color2'}
       borderWidth={2}
@@ -119,35 +119,46 @@ function DayCard({ day, label, plan, highlight }: { day: DayOfWeek; label: strin
 
 function MealSlot({ label, icon, dish, dimmed, highlighted }: { label: string; icon: string; dish: string; dimmed?: boolean; highlighted?: boolean }) {
   const cat = getDishCategory(dish)
+  const barColor = icon === '🍽️' ? '$orange9' : '$blue9'
+  const slotEmoji = icon === '🍽️' ? '☀️' : '🌙'
   return (
-    <YStack
+    <XStack
       gap="$2"
-      padding="$3"
-      backgroundColor={cat.color as any}
-      borderRadius="$4"
+      alignItems="center"
       opacity={dimmed ? 0.4 : 1}
-      borderWidth={highlighted ? 2 : 0}
-      borderColor="$blue8"
-      overflow="hidden"
-      position="relative"
     >
-      {/* Emoji de fondo */}
-      <Text
-        position="absolute"
-        right={-4}
-        top="50%"
-        fontSize={80}
-        opacity={0.15}
-        style={{ pointerEvents: 'none', transform: 'translateY(-50%)' }}
+      <Text fontSize="$5">{slotEmoji}</Text>
+      <XStack
+        flex={1}
+        borderWidth={highlighted ? 2 : 0}
+        borderColor="$blue8"
+        borderRadius="$4"
+        overflow="hidden"
       >
-        {cat.icon}
-      </Text>
-      <XStack gap="$2" alignItems="center">
-        <Text fontSize="$3" color="$color8" fontWeight="600">{icon} {label}</Text>
+        {/* Barra lateral de color */}
+        <YStack width={6} backgroundColor={barColor as any} />
+        {/* Contenido */}
+        <YStack
+          flex={1}
+          padding="$3"
+          backgroundColor={cat.color as any}
+          position="relative"
+          overflow="hidden"
+        >
+          {/* Emoji de fondo */}
+          <Text
+            position="absolute"
+            right={-4}
+            top="50%"
+            fontSize={60}
+            opacity={0.15}
+            style={{ pointerEvents: 'none', transform: 'translateY(-50%)' }}
+          >
+            {cat.icon}
+          </Text>
+          <Text fontSize="$5" fontWeight="500">{dish}</Text>
+        </YStack>
       </XStack>
-      <XStack gap="$3" alignItems="center" paddingLeft="$1">
-        <Text fontSize="$5" fontWeight="500" flex={1}>{dish}</Text>
-      </XStack>
-    </YStack>
+    </XStack>
   )
 }
