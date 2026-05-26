@@ -15,6 +15,7 @@ function getInitialTab(): Tab {
 
 export default function App() {
   const [tab, setTab] = useState<Tab>(getInitialTab)
+  const [weekViewTarget, setWeekViewTarget] = useState<'current' | 'next'>('current')
   const { plan, loading, selectMenu, swapMeals, weekCompleted, cancelNextMenu } = useWeekPlan()
   const scrollRef = useRef<HTMLDivElement>(null)
 
@@ -38,9 +39,9 @@ export default function App() {
     <YStack flex={1} height="100vh" backgroundColor="$background" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
       <YStack flex={1} overflow="scroll" padding="$4" paddingBottom="$2" ref={scrollRef}>
         {activeTab === 'hoy' && plan && <DayView plan={plan} />}
-        {activeTab === 'semana' && plan && <WeekView plan={plan} swapMeals={swapMeals} cancelNextMenu={cancelNextMenu} />}
+        {activeTab === 'semana' && plan && <WeekView plan={plan} swapMeals={swapMeals} cancelNextMenu={cancelNextMenu} initialView={weekViewTarget} />}
         {activeTab === 'historial' && <HistoryView />}
-        {activeTab === 'menu' && <MenuSelect onSelect={selectMenu} currentMenuId={plan?.menuId} nextMenuId={plan?.nextMenuId} hasActivePlan={!!plan} />}
+        {activeTab === 'menu' && <MenuSelect onSelect={async (id, dist, mode) => { await selectMenu(id, dist, mode); setWeekViewTarget(mode === 'schedule' ? 'next' : 'current'); setTab('semana') }} currentMenuId={plan?.menuId} nextMenuId={plan?.nextMenuId} hasActivePlan={!!plan} />}
       </YStack>
       <TabBar active={activeTab} onChange={setTab} />
 

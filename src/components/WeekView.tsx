@@ -18,6 +18,7 @@ interface Props {
   plan: WeekPlan
   swapMeals: (dayA: DayOfWeek, slotA: 'comida' | 'cena', dayB: DayOfWeek, slotB: 'comida' | 'cena', target?: 'current' | 'next') => void
   cancelNextMenu: () => void
+  initialView?: 'current' | 'next'
 }
 
 interface SelectedSlot {
@@ -26,11 +27,11 @@ interface SelectedSlot {
   target: 'current' | 'next'
 }
 
-export function WeekView({ plan, swapMeals, cancelNextMenu }: Props) {
+export function WeekView({ plan, swapMeals, cancelNextMenu, initialView }: Props) {
   const todayIdx = getTodayIndex()
   const [selected, setSelected] = useState<SelectedSlot | null>(null)
   const [toast, setToast] = useState(false)
-  const [viewTarget, setViewTarget] = useState<'current' | 'next'>('current')
+  const [viewTarget, setViewTarget] = useState<'current' | 'next'>(initialView || 'current')
   const hasNext = !!(plan.nextMenuId && plan.nextDistribution)
   const touchStartX = useRef(0)
   const touchStartY = useRef(0)
@@ -223,7 +224,11 @@ export function WeekView({ plan, swapMeals, cancelNextMenu }: Props) {
           </YStack>
           {hasNext && (
             <YStack style={{ width: '50%' }}>
-              <Button size="$4" theme="red" marginBottom="$3" borderRadius="$4" onPress={() => { cancelNextMenu(); setViewTarget('current') }}>
+              <Button size="$4" theme="red" marginBottom="$3" borderRadius="$4" onPress={() => {
+                if (window.confirm('¿Cancelar la programación de ' + plan.nextMenuId + '?')) {
+                  cancelNextMenu(); setViewTarget('current')
+                }
+              }}>
                 Cancelar programación
               </Button>
               <WeekBlock
