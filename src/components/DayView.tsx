@@ -67,20 +67,17 @@ export function DayView({ plan }: Props) {
 
       {/* Tarjeta alimentos libres */}
       <Card
-        padding="$4"
-        borderRadius="$5"
+        padding="$3"
+        borderRadius="$4"
         backgroundColor="$green2"
         borderWidth={1}
         borderColor="$green6"
         pressStyle={{ scale: 0.98, backgroundColor: '$green3' }}
         onPress={() => setShowLibres(true)}
       >
-        <XStack alignItems="center" gap="$3">
-          <Text fontSize="$6">🥗</Text>
-          <YStack flex={1}>
-            <Text fontSize="$4" fontWeight="600" color="$green10">¿Tienes hambre?</Text>
-            <Text fontSize="$3" color="$color8">Mira qué puedes picar →</Text>
-          </YStack>
+        <XStack alignItems="center" gap="$2">
+          <Text fontSize="$5">🥗</Text>
+          <Text fontSize="$3" fontWeight="600" color="$green10">¿Tienes hambre? Mira qué puedes picar →</Text>
         </XStack>
       </Card>
     </YStack>
