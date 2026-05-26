@@ -20,9 +20,9 @@ export function TabBar({ active, onChange }: Props) {
       borderTopWidth={1}
       borderTopColor="$borderColor"
       backgroundColor="$background"
-      paddingTop="$2"
+      paddingTop="$1"
       elevation="$4"
-      style={{ paddingBottom: 'calc(8px + env(safe-area-inset-bottom, 0px))' }}
+      style={{ paddingBottom: 'calc(4px + env(safe-area-inset-bottom, 0px))' }}
     >
       {TABS.map(t => {
         const isActive = active === t.id
@@ -32,12 +32,12 @@ export function TabBar({ active, onChange }: Props) {
             flex={1}
             alignItems="center"
             justifyContent="center"
-            paddingVertical="$2"
+            paddingVertical="$1"
             onPress={() => onChange(t.id)}
             cursor="pointer"
             pressStyle={{ scale: 0.9 }}
           >
-            <Text fontSize="$6" marginBottom="$1">{t.icon}</Text>
+            <Text fontSize="$5" marginBottom={2}>{t.icon}</Text>
             <Text
               fontSize="$2"
               fontWeight={isActive ? '700' : '400'}
