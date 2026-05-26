@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { YStack, XStack, Text, Card, Separator } from 'tamagui'
-import { AlimentosLibresModal } from './AlimentosLibresModal'
+import { AlimentosLibresView } from './AlimentosLibresModal'
 import { getDishCategory } from '../utils/dishCategory'
 import type { WeekPlan, DayOfWeek } from '../types'
 
@@ -32,6 +32,10 @@ export function DayView({ plan }: Props) {
     ? plan.nextDistribution[DAYS[0]]
     : plan.distribution[tomorrow]
   const tomorrowMenuLabel = isSunday && plan.nextMenuId ? plan.nextMenuId : null
+
+  if (showLibres) {
+    return <AlimentosLibresView onClose={() => setShowLibres(false)} />
+  }
 
   return (
     <YStack gap="$4">
@@ -79,8 +83,6 @@ export function DayView({ plan }: Props) {
           </YStack>
         </XStack>
       </Card>
-
-      {showLibres && <AlimentosLibresModal onClose={() => setShowLibres(false)} />}
     </YStack>
   )
 }
