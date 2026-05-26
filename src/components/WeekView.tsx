@@ -223,6 +223,9 @@ export function WeekView({ plan, swapMeals, cancelNextMenu }: Props) {
           </YStack>
           {hasNext && (
             <YStack style={{ width: '50%' }}>
+              <Button size="$4" theme="red" marginBottom="$3" borderRadius="$4" onPress={() => { cancelNextMenu(); setViewTarget('current') }}>
+                Cancelar programación
+              </Button>
               <WeekBlock
                 title={`${plan.nextMenuId} (desde el lunes)`}
                 distribution={plan.nextDistribution!}
@@ -231,9 +234,6 @@ export function WeekView({ plan, swapMeals, cancelNextMenu }: Props) {
                 onSelect={(day, slot) => setSelected({ day, slot, target: 'next' })}
                 isNext
               />
-              <Button size="$4" theme="red" marginTop="$3" borderRadius="$4" onPress={() => { cancelNextMenu(); setViewTarget('current') }}>
-                Cancelar programación
-              </Button>
             </YStack>
           )}
         </YStack>
