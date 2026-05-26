@@ -26,4 +26,18 @@ export interface WeekPlan {
   menuId: string
   distribution: WeekDistribution
   updatedAt: number
+  weekStartedAt: number
+  hasSwaps: boolean
+  nextMenuId?: string
+  nextDistribution?: WeekDistribution
+  nextHasSwaps?: boolean
+}
+
+export interface HistoryEntry {
+  menuId: string
+  distribution: WeekDistribution
+  weekStart: number
+  weekEnd: number
+  hadSwaps: boolean
+  createdAt: number
 }

@@ -1,12 +1,12 @@
 import { XStack, Text, YStack } from 'tamagui'
 
-type Tab = 'hoy' | 'semana' | 'menu' | 'libres'
+export type Tab = 'hoy' | 'semana' | 'historial' | 'menu'
 
 const TABS: { id: Tab; label: string; icon: string }[] = [
   { id: 'hoy', label: 'Hoy', icon: '📅' },
   { id: 'semana', label: 'Semana', icon: '📋' },
+  { id: 'historial', label: 'Historial', icon: '📊' },
   { id: 'menu', label: 'Menú', icon: '🔍' },
-  { id: 'libres', label: 'Libres', icon: '🥗' },
 ]
 
 interface Props {

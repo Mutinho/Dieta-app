@@ -4,18 +4,18 @@ import { useWeekPlan } from './hooks/useWeekPlan'
 import { DayView } from './components/DayView'
 import { WeekView } from './components/WeekView'
 import { MenuSelect } from './components/MenuSelect'
-import { AlimentosLibres } from './components/AlimentosLibres'
-import { TabBar } from './components/TabBar'
-
-type Tab = 'hoy' | 'semana' | 'menu' | 'libres'
+import { HistoryView } from './components/HistoryView'
+import { TabBar, type Tab } from './components/TabBar'
 
 function getInitialTab(): Tab {
-  return (location.hash.replace('#', '') as Tab) || 'hoy'
+  const hash = location.hash.replace('#', '') as Tab
+  if (['hoy', 'semana', 'historial', 'menu'].includes(hash)) return hash
+  return 'hoy'
 }
 
 export default function App() {
   const [tab, setTab] = useState<Tab>(getInitialTab)
-  const { plan, loading, selectMenu, swapMeals } = useWeekPlan()
+  const { plan, loading, selectMenu, swapMeals, weekCompleted } = useWeekPlan()
   const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function App() {
     scrollRef.current?.scrollTo(0, 0)
   }, [tab])
 
-  const activeTab = !plan && !loading && tab !== 'menu' && tab !== 'libres' && tab !== 'semana' ? 'menu' : tab
+  const activeTab = !plan && !loading && tab !== 'menu' && tab !== 'historial' ? 'menu' : tab
 
   if (loading) {
     return (
@@ -39,10 +39,18 @@ export default function App() {
       <YStack flex={1} overflow="scroll" padding="$4" paddingBottom="$2" ref={scrollRef}>
         {activeTab === 'hoy' && plan && <DayView plan={plan} />}
         {activeTab === 'semana' && plan && <WeekView plan={plan} swapMeals={swapMeals} />}
-        {activeTab === 'menu' && <MenuSelect onSelect={async (id, dist) => { await selectMenu(id, dist); setTab('semana') }} currentMenuId={plan?.menuId} />}
-        {activeTab === 'libres' && <AlimentosLibres />}
+        {activeTab === 'historial' && <HistoryView />}
+        {activeTab === 'menu' && <MenuSelect onSelect={selectMenu} currentMenuId={plan?.menuId} nextMenuId={plan?.nextMenuId} hasActivePlan={!!plan} />}
       </YStack>
       <TabBar active={activeTab} onChange={setTab} />
+
+      {weekCompleted && (
+        <YStack position="absolute" top={60} left={0} right={0} alignItems="center" zIndex={100}>
+          <YStack backgroundColor="$green9" paddingHorizontal="$5" paddingVertical="$3" borderRadius="$4" elevation="$4">
+            <Text color="white" fontSize="$4" fontWeight="700">✅ Semana completada — {weekCompleted}</Text>
+          </YStack>
+        </YStack>
+      )}
     </YStack>
   )
 }
