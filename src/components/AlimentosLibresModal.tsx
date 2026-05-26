@@ -1,3 +1,4 @@
+import { createPortal } from 'react-dom'
 import { YStack, XStack, Text, Card, Separator, Button } from 'tamagui'
 import menuData from '../data/menus_dieta.json'
 
@@ -33,12 +34,9 @@ interface Props {
 export function AlimentosLibresModal({ onClose }: Props) {
   const { general, frutas } = menuData.alimentos_libres
 
-  return (
-    <YStack
-      position="absolute"
-      zIndex={200}
-      justifyContent="flex-end"
-      onPress={onClose}
+  return createPortal(
+    <div
+      onClick={onClose}
       style={{
         position: 'fixed',
         top: 0,
@@ -48,6 +46,8 @@ export function AlimentosLibresModal({ onClose }: Props) {
         backgroundColor: 'rgba(0,0,0,0.6)',
         display: 'flex',
         justifyContent: 'flex-end',
+        flexDirection: 'column',
+        zIndex: 9999,
       }}
     >
       <YStack
@@ -57,6 +57,7 @@ export function AlimentosLibresModal({ onClose }: Props) {
         padding="$5"
         maxHeight="80%"
         onPress={(e: { stopPropagation: () => void }) => e.stopPropagation()}
+        onClick={(e: React.MouseEvent) => e.stopPropagation()}
       >
         <XStack justifyContent="space-between" alignItems="center" marginBottom="$3">
           <Text fontSize="$6" fontWeight="800">🥗 Alimentos libres</Text>
@@ -91,6 +92,7 @@ export function AlimentosLibresModal({ onClose }: Props) {
           </Card>
         </YStack>
       </YStack>
-    </YStack>
+    </div>,
+    document.body
   )
 }
