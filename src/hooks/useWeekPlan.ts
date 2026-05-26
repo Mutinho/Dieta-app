@@ -110,5 +110,10 @@ export function useWeekPlan() {
     }
   }
 
-  return { plan, loading, selectMenu, swapMeals, weekCompleted }
+
+  async function cancelNextMenu() {
+    if (!plan?.nextMenuId) return
+    await updateDoc(DOC_REF, { nextMenuId: null, nextDistribution: null, nextHasSwaps: null, updatedAt: Date.now() })
+  }
+  return { plan, loading, selectMenu, swapMeals, weekCompleted, cancelNextMenu }
 }
