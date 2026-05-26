@@ -32,36 +32,55 @@ export function WeekView({ plan, swapMeals }: Props) {
   const [viewTarget, setViewTarget] = useState<'current' | 'next'>('current')
   const hasNext = !!(plan.nextMenuId && plan.nextDistribution)
   const touchStartX = useRef(0)
+  const touchStartY = useRef(0)
   const [dragOffset, setDragOffset] = useState(0)
   const [isDragging, setIsDragging] = useState(false)
+  const directionLocked = useRef<'horizontal' | 'vertical' | null>(null)
 
   function handleTouchStart(e: React.TouchEvent) {
     if (!hasNext) return
     touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
+    directionLocked.current = null
     setIsDragging(true)
   }
 
   function handleTouchMove(e: React.TouchEvent) {
     if (!hasNext || !isDragging) return
-    const diff = e.touches[0].clientX - touchStartX.current
-    // Clamp: si estamos en current, solo permitir arrastrar a la izquierda; si en next, a la derecha
+    const diffX = e.touches[0].clientX - touchStartX.current
+    const diffY = e.touches[0].clientY - touchStartY.current
+
+    // Lock direction on first significant movement
+    if (!directionLocked.current) {
+      if (Math.abs(diffX) > 10 || Math.abs(diffY) > 10) {
+        directionLocked.current = Math.abs(diffX) > Math.abs(diffY) ? 'horizontal' : 'vertical'
+      }
+      return
+    }
+
+    if (directionLocked.current === 'vertical') return
+
+    // Horizontal swipe
     if (viewTarget === 'current') {
-      setDragOffset(Math.min(0, Math.max(-window.innerWidth, diff)))
+      setDragOffset(Math.min(0, Math.max(-window.innerWidth, diffX)))
     } else {
-      setDragOffset(Math.max(0, Math.min(window.innerWidth, diff)))
+      setDragOffset(Math.max(0, Math.min(window.innerWidth, diffX)))
     }
   }
 
   function handleTouchEnd() {
     if (!hasNext || !isDragging) return
     setIsDragging(false)
-    const threshold = window.innerWidth * 0.25
-    if (viewTarget === 'current' && dragOffset < -threshold) {
-      setViewTarget('next')
-    } else if (viewTarget === 'next' && dragOffset > threshold) {
-      setViewTarget('current')
+    if (directionLocked.current === 'horizontal') {
+      const threshold = window.innerWidth * 0.25
+      if (viewTarget === 'current' && dragOffset < -threshold) {
+        setViewTarget('next')
+      } else if (viewTarget === 'next' && dragOffset > threshold) {
+        setViewTarget('current')
+      }
     }
     setDragOffset(0)
+    directionLocked.current = null
   }
 
   function handlePickMeal(targetDay: DayOfWeek, targetSlot: 'comida' | 'cena') {
